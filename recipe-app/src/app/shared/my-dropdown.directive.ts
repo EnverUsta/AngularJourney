@@ -13,11 +13,9 @@ import {
 export class MyDropdownDirective implements OnInit {
   private isOpen: boolean = false;
 
-  constructor(private elementRef: ElementRef, private renderer: Renderer2) {
-  }
+  constructor(private elementRef: ElementRef, private renderer: Renderer2) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   @HostListener('click') onClick() {
     if (!this.isOpen) {
@@ -27,5 +25,4 @@ export class MyDropdownDirective implements OnInit {
     }
     this.isOpen = !this.isOpen;
   }
-
 }
