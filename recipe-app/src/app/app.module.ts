@@ -12,9 +12,11 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MyDropdownDirective } from './shared/my-dropdown.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 const routes: Routes = [
-  { path: '', component: RecipesComponent },
+  { path: '', component: RecipesComponent, pathMatch: 'full' },
   { path: 'recipes', component: RecipesComponent },
   { path: 'shopping-list', component: ShoppingListComponent },
 ];
@@ -29,6 +31,8 @@ const routes: Routes = [
     RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
+    MyDropdownDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
