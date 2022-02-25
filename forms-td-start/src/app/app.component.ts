@@ -17,6 +17,7 @@ export class AppComponent {
     secretQuestion: '',
     answer: '',
     gender: '',
+    favoriteColor: ''
   };
   submitted = false;
 
@@ -50,6 +51,8 @@ export class AppComponent {
     this.user.secretQuestion = this.signupForm.value.secret;
     this.user.answer = this.signupForm.value.questionAnswer;
     this.user.gender = this.signupForm.value.gender;
-    this.signupForm.reset(); 
+    this.user.favoriteColor = this.signupForm.value.favoriteColor;
+    console.table(this.user);
+    this.signupForm.reset();
   }
 }

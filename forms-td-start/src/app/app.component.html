@@ -71,6 +71,17 @@
             />{{ gender }}</label
           >
         </div>
+        <div class="form-group">
+          <label for="favorite-color">What is your favorite color?</label>
+          <input
+            type="text"
+            class="form-control"
+            id="favorite-color"
+            name="favoriteColor"
+            ngModel
+            required
+          />
+        </div>
         <button class="btn btn-primary" type="submit" [disabled]="!f.valid">
           Submit
         </button>
@@ -86,6 +97,7 @@
       <p>Secret Question: Your first {{ user.secretQuestion }}</p>
       <p>Answer: {{ user.answer }}</p>
       <p>Gender: {{ user.gender }}</p>
+      <p>FavoriteColor: {{ user.favoriteColor }}</p>
     </div>
   </div>
 </div>
