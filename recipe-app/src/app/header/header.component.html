@@ -17,16 +17,19 @@
     >
       <ul class="nav navbar-nav">
         <li routerLinkActive="active">
-          <a routerLink="/recipes">Recipes</a>
+          <a *ngIf="isAuthenticated" routerLink="/recipes">Recipes</a>
         </li>
         <li routerLinkActive="active">
-          <a routerLink="/auth">Authenticate</a>
+          <a *ngIf="!isAuthenticated" routerLink="/auth">Authenticate</a>
         </li>
         <li routerLinkActive="active">
           <a routerLink="/shopping-list">Shopping List</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="isAuthenticated">
+          <a>Logout</a>
+        </li>
         <li class="dropdown" appDropdown>
           <a class="dropdown-toggle dropdown" role="button"
             >Manage <span class="caret"></span
