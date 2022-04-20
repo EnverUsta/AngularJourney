@@ -25,6 +25,7 @@ export class AuthGuard implements CanActivate {
     return this.authService.user.pipe(
       take(1),
       map((user) => {
+        // we used createUrlTree because it is safer. We don't wanna mix via lots of redirection
         return !!user ? true : this.router.createUrlTree(['/auth']);
       })
       // tap((isAuth) => {
