@@ -12,7 +12,9 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient[];
   private ingChangedSub: Subscription;
 
-  constructor(private shoppingListService: ShoppingListService) {}
+  constructor(
+    private shoppingListService: ShoppingListService,
+  ) {}
 
   ngOnDestroy(): void {
     this.ingChangedSub.unsubscribe();
