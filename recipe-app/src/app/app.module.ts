@@ -16,12 +16,10 @@ import { shoppingListReducer } from './shopping-list/store/shopping-list.reducer
     BrowserModule,
     HttpClientModule,
     StoreModule.forRoot({ shoppingList: shoppingListReducer }),
-
     // custom modules
     SharedModule,
     AppRoutingModule,
     CoreModule, // This module is eagerly-loaded module
-
     // We have removed both RecipesModule and ShoppingListModule because we used lazy loading on them
     // AuthModule,
     // RecipesModule

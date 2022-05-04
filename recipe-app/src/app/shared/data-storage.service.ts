@@ -20,9 +20,7 @@ export class DataStorageService {
         'https://ng-course-recipe-a9cfd-default-rtdb.firebaseio.com/recipes.json',
         recipes
       )
-      .subscribe((response) => {
-        console.log('storeRecipes() response: ', response);
-      });
+      .subscribe();
   }
 
   fetchRecipes() {

@@ -45,7 +45,6 @@ export class AuthComponent implements OnDestroy {
     const password = authForm.value.password;
     let authObserver = {
       next: (response) => {
-        console.log(response);
         this.isLoading = false;
         this.router.navigate(['/recipes']);
       },
