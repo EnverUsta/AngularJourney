@@ -14,10 +14,7 @@ import * as fromApp from '../store/app.reducer';
 
 @Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
-  constructor(
-    private authService: AuthService,
-    private store: Store<fromApp.AppState>
-  ) {}
+  constructor(private store: Store<fromApp.AppState>) {}
 
   intercept(
     req: HttpRequest<any>,
@@ -29,6 +26,10 @@ export class AuthInterceptorService implements HttpInterceptor {
         return authState.user;
       }),
       exhaustMap((user) => {
+        //* This interceptor normally works when we send any reqest
+        //* However, we don't want to execute this in authentication
+        //* because we don't have token yet at that time
+        //* that is the reason, we added if condition
         if (!user) return next.handle(req);
         const modifiedReq = req.clone({
           params: new HttpParams().set('auth', user.token),

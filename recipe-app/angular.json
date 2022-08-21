@@ -99,5 +99,7 @@
       }
     }
   },
-  "defaultProject": "recipe-app"
+  "cli": {
+    "analytics": false
+  }
 }
